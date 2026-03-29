@@ -1,0 +1,60 @@
+body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    background: black; overflow: hidden;
+    font-family: 'Courier New', monospace; color: #00FF00;
+}
+
+#matrixCanvas { position: fixed; top: 0; left: 0; z-index: 0; }
+.hidden { display: none !important; }
+
+/* Окно терминала */
+.window {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; max-width: 650px; height: 450px;
+    background: rgba(0, 10, 0, 0.95);
+    border: 2px solid #0f0;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+    z-index: 10; display: flex; flex-direction: column;
+}
+
+.window-header {
+    background: #0f0; color: black; padding: 5px 15px;
+    font-weight: bold; font-size: 13px; display: flex; justify-content: space-between;
+}
+
+.window-content { padding: 20px; flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Прогресс-бар */
+.progress-wrapper { margin-bottom: 15px; text-align: right; font-weight: bold; }
+#progress-container {
+    width: 100%; height: 25px; border: 1px solid #0f0;
+    background: rgba(0, 40, 0, 0.5); position: relative;
+}
+#progress-bar {
+    width: 0%; height: 100%; background: #0f0;
+    box-shadow: 0 0 15px #0f0; transition: width 0.1s linear;
+}
+
+/* Логи */
+.log-area {
+    flex: 1; background: rgba(0,0,0,0.6); border: 1px solid #050;
+    padding: 10px; font-size: 12px; overflow-y: auto; text-align: left;
+}
+
+/* Кнопки */
+.button-group { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.btn {
+    background: #0f0; color: #000; border: none; padding: 15px;
+    font-weight: bold; cursor: pointer; text-transform: uppercase;
+}
+.btn-secondary { background: transparent; color: #0f0; border: 1px solid #0f0; }
+.btn-screamer { background: white; color: black; margin-top: 10px; }
+.btn:hover { background: #fff; color: #000; box-shadow: 0 0 10px #fff; }
+
+.white { color: white; }
+.blink-red { color: red; animation: blink 0.6s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+#screamer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100; display: none; }
+#screamer img { width: 100%; height: 100%; object-fit: cover; }
