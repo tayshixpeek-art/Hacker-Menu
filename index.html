@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Terminal v4.0</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- Основное окно терминала -->
+    <div id="terminal-window" class="window">
+        <div class="window-header">
+            <span>TERMINAL_BREACH_CONSOlE</span>
+            <span class="close-btn" onclick="location.reload()">[X]</span>
+        </div>
+
+        <div class="window-content">
+            <!-- Начальный экран -->
+            <div id="menu-screen">
+                <h2 class="glitch">SYSTEM STATUS: READY</h2>
+                <div class="button-group">
+                    <button class="btn" onclick="startDeepHack()">ИНИЦИИРОВАТЬ ВЗЛОМ</button>
+                    <button class="btn btn-secondary" onclick="showFirewall()">БРАНДМАУЭР</button>
+                    <a href="settings.html" class="btn btn-secondary">НАСТРОЙКИ</a>
+                </div>
+            </div>
+
+            <!-- Экран взлома -->
+            <div id="hack-screen" class="hidden">
+                <div class="progress-wrapper">
+                    <div id="progress-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                    <div id="progress-percent">0%</div>
+                </div>
+                <div id="hack-log" class="log-area"></div>
+            </div>
+
+            <!-- Экран Брандмауэра -->
+            <div id="firewall-screen" class="hidden">
+                <h3>FIREWALL REPORT</h3>
+                <div class="fw-data">
+                    <p>IP: <span class="white">192.168.1.254</span></p>
+                    <p>DNS: <span class="white">8.8.4.4 / 1.0.0.1</span></p>
+                    <p>API STATUS: <span class="blink-red">BYPASSED</span></p>
+                    <p>CHROME CONFIG: <span class="white">VULNERABLE</span></p>
+                </div>
+                <button class="btn btn-secondary" onclick="showMenu()">НАЗАД</button>
+            </div>
+
+            <!-- Финальный экран -->
+            <div id="final-screen" class="hidden">
+                <h2 class="success-text">ВЗЛОМ ЗАВЕРШЕН</h2>
+                <p>Все конфиги браузеров и DNS-маршруты извлечены.</p>
+                <button class="btn btn-screamer" onclick="triggerScreamer()">Нажми меня</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="screamer"><img src="https://i.imgur.com/H99p5pY.jpg"></div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
